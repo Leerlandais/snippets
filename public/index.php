@@ -16,3 +16,8 @@ if(isset($_SESSION["systemMessage"])) {
     $systemMessage = $_SESSION["systemMessage"];
     unset($_SESSION["systemMessage"]);
 }
+
+
+// LOAD REQUIRED DEPENDENCIES
+require_once("../config.php");
+require_once("../controller/dbConnection.php");

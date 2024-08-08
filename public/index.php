@@ -21,3 +21,14 @@ if(isset($_SESSION["systemMessage"])) {
 // LOAD REQUIRED DEPENDENCIES
 require_once("../config.php");
 require_once("../controller/dbConnection.php");
+
+// DEV MODE CONNECTION TEST
+// if (isset($db)) echo "DB connection was established<br>";
+
+if (isset($_SESSION["id"]) && $_SESSION["id"] === session_id() && $_SESSION["permission"] > 0) {
+    require_once("../controller/privateController.php");
+}else {
+    require_once("../controller/publicController.php");
+}
+
+$db = null;

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3307
--- Generation Time: Aug 08, 2024 at 04:52 PM
+-- Generation Time: Aug 09, 2024 at 03:46 PM
 -- Server version: 11.2.2-MariaDB
 -- PHP Version: 8.2.13
 
@@ -20,6 +20,28 @@ SET time_zone = "+00:00";
 --
 -- Database: `snippets`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `snippets_forms`
+--
+
+DROP TABLE IF EXISTS `snippets_forms`;
+CREATE TABLE IF NOT EXISTS `snippets_forms` (
+  `snip_forms_id` smallint(5) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `snip_forms_class` varchar(31) NOT NULL,
+  `snip_forms_title` varchar(63) NOT NULL,
+  `snip_forms_desc` varchar(255) NOT NULL,
+  `snip_forms_rw` text NOT NULL,
+  `snip_forms_bs` text NOT NULL,
+  `snip_forms_tw` text NOT NULL,
+  `snip_forms_js_main` text DEFAULT NULL,
+  `snip_forms_js_extra` text DEFAULT NULL,
+  `snip_forms_php_function` text DEFAULT NULL,
+  `snip_forms_php_call` text DEFAULT NULL,
+  PRIMARY KEY (`snip_forms_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 

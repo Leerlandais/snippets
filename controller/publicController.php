@@ -1,6 +1,4 @@
 <?php
-$_SESSION["systemMessage"] = "public page";
-
 
 // LOGIN CONTROL
 if (isset($_POST["userLoginName"],

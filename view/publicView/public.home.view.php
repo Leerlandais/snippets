@@ -14,6 +14,7 @@
     <title><?=$title?></title>
 </head>
 <body>
+<div class="container-fluid bg-green-300 h-screen text-center">
 <?php
 if (isset($systemMessage)) {
 ?>
@@ -21,10 +22,12 @@ if (isset($systemMessage)) {
 <?php
 }
 ?>
+<?php include "inc/publicHeader.php"?>
 <h1>Pub Good</h1>
 <a href="?login">Login</a>
 <?php
 if (isset($_GET["login"])) include 'inc/loginForm.php';
 ?>
+</div>
 </body>
 </html>

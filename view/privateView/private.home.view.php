@@ -14,6 +14,7 @@
     <title><?=$title?></title>
 </head>
 <body>
+<div class="container-fluid bg-green-300 h-screen text-center">
 <?php
 if (isset($systemMessage)) {
     ?>
@@ -21,7 +22,6 @@ if (isset($systemMessage)) {
     <?php
 }
 ?>
-<div class="container-fluid bg-green-300 h-screen text-center">
 <h1>Private Good</h1>
 <a href="?logout">Logout</a>
 

@@ -17,7 +17,7 @@
 <body class="bg-gray-100">
 <nav class="bg-blue-500 p-4 flex items-center justify-between">
     <div>
-        <h1 class="text-white text-xl font-semibold">Hi There</h1>
+        <h1 class="text-white text-xl font-semibold">Code Snippets</h1>
     </div>
     <div class="flex items-center space-x-4">
         <a href="?login"><span class="text-white">Login</span></a>
@@ -32,25 +32,159 @@
                     <div class="flex items-center justify-between p-2 hover:bg-gray-700">
                         <div class="flex items-center">
                             <i class="fas fa-file-alt mr-2"></i>
-                            <span>Documentation</span>
+                            <span>Raw</span>
                         </div>
                         <i class="fas fa-chevron-down text-xs"></i>
                     </div>
                     <ul class="dropdown ml-4 hidden">
-                        <li>
-                            <a href="#" class="block p-2 hover:bg-gray-700 flex items-center">
-                                <i class="fas fa-chevron-right mr-2 text-xs"></i>
-                                Pending Signatures
-                            </a>
+                        <li class="option-with-dropdown-inner">
+                            <div class="flex items-center justify-between p-2 hover:bg-gray-700">
+                                <div class="flex items-center">
+                                    <i class="fas fa-chevron-right mr-2 text-xs"></i>
+                                    <span>Forms</span>
+                                </div>
+
+                            </div>
+                            <ul class="dropdown-inner ml-4 hidden">
+                                <li>
+                                    <a href="#" class="block p-2 hover:bg-gray-700 flex items-center">
+                                        Basic Forms
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="block p-2 hover:bg-gray-700 flex items-center">
+                                        Advanced Forms
+                                    </a>
+                                </li>
+                            </ul>
                         </li>
-                        <li>
-                            <a href="#" class="block p-2 hover:bg-gray-700 flex items-center">
-                                <i class="fas fa-chevron-right mr-2 text-xs"></i>
-                                Documents
-                            </a>
+                        <li class="option-with-dropdown-inner">
+                            <div class="flex items-center justify-between p-2 hover:bg-gray-700">
+                                <div class="flex items-center">
+                                    <i class="fas fa-chevron-right mr-2 text-xs"></i>
+                                    <span>Tables</span>
+                                </div>
+                            </div>
+                            <ul class="dropdown-inner ml-4 hidden">
+                                <li>
+                                    <a href="#" class="block p-2 hover:bg-gray-700 flex items-center">
+                                        Simple Tables
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="block p-2 hover:bg-gray-700 flex items-center">
+                                        Data Tables
+                                    </a>
+                                </li>
+                            </ul>
                         </li>
                     </ul>
                 </li>
+                <li class="option-with-dropdown">
+                    <div class="flex items-center justify-between p-2 hover:bg-gray-700">
+                        <div class="flex items-center">
+                            <i class="fas fa-file-alt mr-2"></i>
+                            <span>Bootstrap</span>
+                        </div>
+                        <i class="fas fa-chevron-down text-xs"></i>
+                    </div>
+                    <ul class="dropdown ml-4 hidden">
+                        <li class="option-with-dropdown-inner">
+                            <div class="flex items-center justify-between p-2 hover:bg-gray-700">
+                                <div class="flex items-center">
+                                    <i class="fas fa-chevron-right mr-2 text-xs"></i>
+                                    <span>Forms</span>
+                                </div>
+
+                            </div>
+                            <ul class="dropdown-inner ml-4 hidden">
+                                <li>
+                                    <a href="#" class="block p-2 hover:bg-gray-700 flex items-center">
+                                        Basic Forms
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="block p-2 hover:bg-gray-700 flex items-center">
+                                        Advanced Forms
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="option-with-dropdown-inner">
+                            <div class="flex items-center justify-between p-2 hover:bg-gray-700">
+                                <div class="flex items-center">
+                                    <i class="fas fa-chevron-right mr-2 text-xs"></i>
+                                    <span>Tables</span>
+                                </div>
+                            </div>
+                            <ul class="dropdown-inner ml-4 hidden">
+                                <li>
+                                    <a href="#" class="block p-2 hover:bg-gray-700 flex items-center">
+                                        Simple Tables
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="block p-2 hover:bg-gray-700 flex items-center">
+                                        Data Tables
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class="option-with-dropdown">
+                    <div class="flex items-center justify-between p-2 hover:bg-gray-700">
+                        <div class="flex items-center">
+                            <i class="fas fa-file-alt mr-2"></i>
+                            <span>Tailwind</span>
+                        </div>
+                        <i class="fas fa-chevron-down text-xs"></i>
+                    </div>
+                    <ul class="dropdown ml-4 hidden">
+                        <li class="option-with-dropdown-inner">
+                            <div class="flex items-center justify-between p-2 hover:bg-gray-700">
+                                <div class="flex items-center">
+                                    <i class="fas fa-chevron-right mr-2 text-xs"></i>
+                                    <span>Forms</span>
+                                </div>
+
+                            </div>
+                            <ul class="dropdown-inner ml-4 hidden">
+                                <li>
+                                    <a href="#" class="block p-2 hover:bg-gray-700 flex items-center">
+                                        Basic Forms
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="block p-2 hover:bg-gray-700 flex items-center">
+                                        Advanced Forms
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="option-with-dropdown-inner">
+                            <div class="flex items-center justify-between p-2 hover:bg-gray-700">
+                                <div class="flex items-center">
+                                    <i class="fas fa-chevron-right mr-2 text-xs"></i>
+                                    <span>Tables</span>
+                                </div>
+                            </div>
+                            <ul class="dropdown-inner ml-4 hidden">
+                                <li>
+                                    <a href="#" class="block p-2 hover:bg-gray-700 flex items-center">
+                                        Simple Tables
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="block p-2 hover:bg-gray-700 flex items-center">
+                                        Data Tables
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+
                 <!-- Add more links for the side navigation -->
             </ul>
         </nav>
@@ -68,23 +202,9 @@ if (isset($systemMessage)) {
 ?>
 
 
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        // Get all main options with dropdowns
-        const optionsWithDropdown = document.querySelectorAll(".option-with-dropdown");
-
-        // Add click event to each main option
-        optionsWithDropdown.forEach(function (option) {
-            option.addEventListener("click", function () {
-                // Get the dropdown associated with the option
-                const dropdown = option.querySelector(".dropdown");
-
-                // Toggle the "hidden" class to show or hide the dropdown
-                dropdown.classList.toggle("hidden");
-            });
-        });
-    });
+<script src="scripts/sideBarScript.js">
 
 </script>
+
 </body>
 </html>

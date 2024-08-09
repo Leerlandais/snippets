@@ -2,4 +2,8 @@
 if (isset($_GET["logout"])) require_once '../model/logoutModel.php';
 
 
-echo '<a href="?logout">Logout</a>';
+
+$title = "Private Page";
+include "../view/privateView/private.home.view.php";
+
+die();

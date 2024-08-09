@@ -188,7 +188,15 @@
                     </li>
                 </ul>
             </li>
+            <li>
+                <div class="flex items-center justify-between p-2 hover:bg-gray-700">
+                    <div class="flex items-center">
+                        <i class="fas fa-file-alt mr-2"></i>
+                        <a href="?update=addNew"><span>New</span></a>
+                    </div>
+                </div>
 
+            </li>
             <!-- Add more links for the side navigation -->
         </ul>
     </nav>

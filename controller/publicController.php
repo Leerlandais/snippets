@@ -18,26 +18,9 @@ if (isset($_POST["userLoginName"],
 
 // SELECTION CONTROLLER
 if(isset($_GET["select"])) {
-    switch ($_GET["select"]) {
-        case "login":
             $form = standardClean($_GET["select"]);
             $mode = standardClean($_GET["mode"]);
-            $getForms = getAllFormsByMode($db, $form, $mode);
-            // echo "login ".$form.$mode;
-            break;
-        case "create":
-            $form = standardClean($_GET["select"]);
-            $mode = standardClean($_GET["mode"]);
-            $getForms = getAllFormsByMode($db, $form, $mode);
-            // echo "create ".$form.$mode;
-            break;
-        case "reset":
-            $form = standardClean($_GET["select"]);
-            $mode = standardClean($_GET["mode"]);
-            $getForms = getAllFormsByMode($db, $form, $mode);
-            // echo "reset ".$form.$mode;
-            break;
-
+    $getForms = getAllFormsByMode($db, $form, $mode);
     }
     if (isset($getForms)) {
         if (is_array($getForms)) {
@@ -46,7 +29,7 @@ if(isset($_GET["select"])) {
             $systemMessage = "form not found";
         }
     }
-}
+
 
 $title = "Public Page";
 include "../view/publicView/public.home.view.php";

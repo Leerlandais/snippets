@@ -23,6 +23,7 @@ require_once("../config.php");
 require_once("../controller/dbConnection.php");
 require_once("../model/laundryModel.php");
 require_once("../model/connectionModel.php");
+require_once("../model/formModel.php");
 
 // DEV MODE CONNECTION TEST
 // if (isset($db)) echo "DB connection was established<br>";

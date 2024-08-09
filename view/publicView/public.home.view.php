@@ -20,7 +20,7 @@
         <h1 class="text-white text-xl font-semibold">Hi There</h1>
     </div>
     <div class="flex items-center space-x-4">
-        <span class="text-white">Welcome</span>
+        <a href="?login"><span class="text-white">Login</span></a>
         <i class="fas fa-user-circle text-white text-2xl"></i>
     </div>
 </nav>
@@ -56,8 +56,7 @@
         </nav>
     </aside>
     <main class="flex-1 p-6">
-        <h2 class="text-2xl font-semibold mb-4">Main Content Area</h2>
-        <p>main content</p>
+<?php if(isset($_GET["login"])) include "inc/loginForm.php"; ?>
     </main>
 </div>
 <?php

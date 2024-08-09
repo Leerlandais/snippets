@@ -47,13 +47,18 @@
                             </div>
                             <ul class="dropdown-inner ml-4 hidden">
                                 <li>
-                                    <a href="#" class="block p-2 hover:bg-gray-700 flex items-center">
-                                        Basic Forms
+                                    <a href="?select=login&mode=rw" class="block p-2 hover:bg-gray-700 flex items-center">
+                                        Login
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#" class="block p-2 hover:bg-gray-700 flex items-center">
-                                        Advanced Forms
+                                    <a href="?select=create&mode=rw" class="block p-2 hover:bg-gray-700 flex items-center">
+                                        Create User
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="?select=reset&mode=rw" class="block p-2 hover:bg-gray-700 flex items-center">
+                                        Reset Password
                                     </a>
                                 </li>
                             </ul>
@@ -99,13 +104,18 @@
                             </div>
                             <ul class="dropdown-inner ml-4 hidden">
                                 <li>
-                                    <a href="#" class="block p-2 hover:bg-gray-700 flex items-center">
-                                        Basic Forms
+                                    <a href="?select=login&mode=bs" class="block p-2 hover:bg-gray-700 flex items-center">
+                                        Login
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#" class="block p-2 hover:bg-gray-700 flex items-center">
-                                        Advanced Forms
+                                    <a href="?select=create&mode=bs" class="block p-2 hover:bg-gray-700 flex items-center">
+                                        Create User
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="?select=reset&mode=bs" class="block p-2 hover:bg-gray-700 flex items-center">
+                                        Reset Password
                                     </a>
                                 </li>
                             </ul>
@@ -151,13 +161,18 @@
                             </div>
                             <ul class="dropdown-inner ml-4 hidden">
                                 <li>
-                                    <a href="#" class="block p-2 hover:bg-gray-700 flex items-center">
-                                        Basic Forms
+                                    <a href="?select=login&mode=tw" class="block p-2 hover:bg-gray-700 flex items-center">
+                                        Login
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#" class="block p-2 hover:bg-gray-700 flex items-center">
-                                        Advanced Forms
+                                    <a href="?select=create&mode=tw" class="block p-2 hover:bg-gray-700 flex items-center">
+                                        Create User
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="?select=reset&mode=tw" class="block p-2 hover:bg-gray-700 flex items-center">
+                                        Reset Password
                                     </a>
                                 </li>
                             </ul>

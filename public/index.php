@@ -27,7 +27,7 @@ require_once("../model/connectionModel.php");
 // DEV MODE CONNECTION TEST
 // if (isset($db)) echo "DB connection was established<br>";
 
-if (isset($_SESSION["id"]) && $_SESSION["id"] === session_id() && $_SESSION["permission"] > 0) {
+if (isset($_SESSION["id"]) && $_SESSION["id"] === session_id() && $_SESSION["snip_user_permissions"] > 0) {
     require_once("../controller/privateController.php");
 }else {
     require_once("../controller/publicController.php");

@@ -14,7 +14,15 @@
     <title><?=$title?></title>
 </head>
 <body>
+<?php
+if (isset($systemMessage)) {
+?>
+<h2 class="text-4xl text-red-700"><?=$systemMessage?></h2>
+<?php
+}
+?>
 <h1>Pub Good</h1>
+<a href="?login">Login</a>
 <?php
 if (isset($_GET["login"])) include 'inc/loginForm.php';
 ?>

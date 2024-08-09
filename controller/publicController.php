@@ -11,6 +11,8 @@ if (isset($_POST["userLoginName"],
 
     if (!$attemptLogin) {
         $_SESSION["systemMessage"] = "login failed";
+    }else {
+        $_SESSION["systemMessage"] = "login success";
     }
     header("Location: ./");
 }

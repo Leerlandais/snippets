@@ -26,7 +26,7 @@ function getAllFormsByMode(PDO $db, string $form, string $mode) : array|bool {
 }
 
 function getDetailsForRadioButtons(PDO $db) : array|bool {
-    $sql = "SELECT snip_forms_class AS class
+    $sql = "SELECT DISTINCT snip_forms_class AS class
             FROM snippets_forms";
     $query = $db->query($sql);
     if ($query->rowCount() === 0) return false;

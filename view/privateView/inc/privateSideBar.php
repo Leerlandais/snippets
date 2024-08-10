@@ -35,11 +35,7 @@
                                     Reset Password
                                 </a>
                             </li>
-                            <li>
-                                <a href="?update=addForm" class="block p-2 hover:bg-gray-700 flex items-center">
-                                    Add New Form
-                                </a>
-                            </li>
+
                         </ul>
                     </li>
                     <li class="option-with-dropdown-inner">
@@ -95,11 +91,6 @@
                             <li>
                                 <a href="?update=reset&mode=bs" class="block p-2 hover:bg-gray-700 flex items-center">
                                     Reset Password
-                                </a>
-                            </li>
-                            <li>
-                                <a href="?update=addForm&mode=tw" class="block p-2 hover:bg-gray-700 flex items-center">
-                                    Add New Form
                                 </a>
                             </li>
                         </ul>
@@ -159,11 +150,6 @@
                                     Reset Password
                                 </a>
                             </li>
-                            <li>
-                                <a href="?update=addForm&mode=tw" class="block p-2 hover:bg-gray-700 flex items-center">
-                                    Add New Form
-                                </a>
-                            </li>
                         </ul>
                     </li>
                     <li class="option-with-dropdown-inner">
@@ -189,11 +175,9 @@
                 </ul>
             </li>
             <li>
-                    <div class="flex items-center">
-                        <i class="fas fa-file-alt mr-2"></i>
-                        <a href="?update=addNew"><span>New</span></a>
-                    </div>
-
+                <a href="?update=addForm" class="block p-2 hover:bg-gray-700 flex items-center">
+                    Add New Form
+                </a>
             </li>
             <!-- Add more links for the side navigation -->
         </ul>

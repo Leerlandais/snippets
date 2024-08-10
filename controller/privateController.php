@@ -12,8 +12,9 @@ if(isset($_GET["update"])) {
     }
 }
 
-// ADD NEW FORM
 
+
+// ADD NEW FORM
 if(isset($_POST["addFormClass"],
          $_POST["addFormTitle"],
          $_POST["addFormDesc"],

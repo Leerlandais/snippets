@@ -1,7 +1,7 @@
 <?php
 // var_dump($addForm);
 ?>
-<form action="./" method="POST">
+<form action="./" method="POST" id="addNewForm">
     <div class="bg-[#F9FAFB] h-auto w-auto flex items-center">
         <div class="h-max mx-auto flex flex-col items-center">
             <h3 class="text-xl font-bold text-center pb-10">Add Form</h3>
@@ -22,7 +22,7 @@
                     ?>
                 </div>
                     <label class="text-gray-600 font-bold inline-block pb-2" for="addFormClassNew">Add Class</label>
-                    <input class="border border-gray-400 focus:outline-slate-400 rounded-md w-full shadow-sm px-5 py-2" type="text" name="addFormClass" id="addFormClassNew" placeholder="Add New Class" required>
+                    <input class="border border-gray-400 focus:outline-slate-400 rounded-md w-full shadow-sm px-5 py-2" type="text" name="addFormClass" id="addFormClassNew" placeholder="Add New Class">
                 <div>
                     <label class="text-gray-600 font-bold inline-block pb-2" for="addFormTitle">Title</label>
                     <input class="border border-gray-400 focus:outline-slate-400 rounded-md w-full shadow-sm px-5 py-2" type="text" name="addFormTitle" id="addFormTitle" placeholder="Title" required>

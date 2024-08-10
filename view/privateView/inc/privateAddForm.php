@@ -55,7 +55,7 @@
                 <div class="flex flex-col place-content-evenly">
                 <div>
                     <label class="text-gray-600 font-bold inline-block pb-2" for="addFormJs">JS Code</label>
-                    <textarea class="border border-gray-400 focus:outline-slate-400 rounded-md w-full shadow-sm px-5 py-2" name="addFormJs" id="addFormJs" placeholder="Main JS Code" required></textarea>
+                    <textarea class="border border-gray-400 focus:outline-slate-400 rounded-md w-full shadow-sm px-5 py-2" name="addFormJs" id="addFormJs" placeholder="Main JS Code - Optional"></textarea>
                 </div>
                 <div>
                     <label class="text-gray-600 font-bold inline-block pb-2" for="addFormJsX">JS Optional</label>
@@ -75,15 +75,15 @@
                 <div class="flex flex-col place-content-evenly">
                 <div>
                     <label class="text-gray-600 font-bold inline-block pb-2" for="addFormImgRw">Image Raw</label>
-                    <input class="border border-gray-400 focus:outline-slate-400 rounded-md w-full shadow-sm px-5 py-2" type="text" name="addFormImgRw" id="addFormImgRw" placeholder="Image Location" required>
+                    <input class="border border-gray-400 focus:outline-slate-400 rounded-md w-full shadow-sm px-5 py-2" type="text" name="addFormImgRw" id="addFormImgRw" placeholder="Raw Image Location">
                 </div>
                     <div>
                         <label class="text-gray-600 font-bold inline-block pb-2" for="addFormImgBs">Image BS</label>
-                        <input class="border border-gray-400 focus:outline-slate-400 rounded-md w-full shadow-sm px-5 py-2" type="text" name="addFormImgBs" id="addFormImgBs" placeholder="Image Location" required>
+                        <input class="border border-gray-400 focus:outline-slate-400 rounded-md w-full shadow-sm px-5 py-2" type="text" name="addFormImgBs" id="addFormImgBs" placeholder="BS Image Location">
                     </div>
                     <div>
                         <label class="text-gray-600 font-bold inline-block pb-2" for="addFormImgTw">Image TW</label>
-                        <input class="border border-gray-400 focus:outline-slate-400 rounded-md w-full shadow-sm px-5 py-2" type="text" name="addFormImgTw" id="addFormImgTw" placeholder="Image Location" required>
+                        <input class="border border-gray-400 focus:outline-slate-400 rounded-md w-full shadow-sm px-5 py-2" type="text" name="addFormImgTw" id="addFormImgTw" placeholder="TW Image Location">
                     </div>
             </div>
             </div>

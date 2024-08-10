@@ -7,7 +7,7 @@ if(isset($_GET["update"])) {
             echo "New Shit";
             break;
         case 'addForm' :
-            $addForm = true;
+            $addForm = getDetailsForRadioButtons($db);
             break;
     }
 }

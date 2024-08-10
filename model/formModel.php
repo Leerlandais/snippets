@@ -24,3 +24,14 @@ function getAllFormsByMode(PDO $db, string $form, string $mode) : array|bool {
         if ($stmt->rowCount() === 0) return false;
     return $stmt->fetchAll();
 }
+
+function getDetailsForRadioButtons(PDO $db) : array|bool {
+    $sql = "SELECT snip_forms_class AS class
+            FROM snippets_forms";
+    $query = $db->query($sql);
+    if ($query->rowCount() === 0) return false;
+    $results = $query->fetchAll();
+    $query->closeCursor();
+    return $results;
+
+}

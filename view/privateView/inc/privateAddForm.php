@@ -12,8 +12,8 @@ var_dump($addForm);
                     $i = true;
                     foreach ($addForm as $value) {
                         ?>
-                        <label for="formClass<?=$value["class"]?>" class="ml-4"><?=ucfirst($value["class"])?></label>
-                        <input class="ps-2 me-1" type="radio" id="formClass<?=$value["class"]?>" name="formClass" value="<?=$value["class"]?>" <?= $i ? 'required' : '' ?>>
+                        <label for="addFormClass<?=$value["class"]?>" class="ml-4"><?=ucfirst($value["class"])?></label>
+                        <input class="ps-2 me-1" type="radio" id="addFormClass<?=$value["class"]?>" name="addFormClass" value="<?=$value["class"]?>" <?= $i ? 'required' : '' ?>>
                         <?php
                         $i = false;
                     }
@@ -55,7 +55,7 @@ var_dump($addForm);
                 </div>
                 <div>
                     <label class="text-gray-600 font-bold inline-block pb-2" for="addFormJsX">JS Optional</label>
-                    <textarea class="border border-gray-400 focus:outline-slate-400 rounded-md w-full shadow-sm px-5 py-2" name="addFormJsX" id="addFormJsX" placeholder="Secondary JS Code"></textarea>
+                    <textarea class="border border-gray-400 focus:outline-slate-400 rounded-md w-full shadow-sm px-5 py-2" name="addFormJsX" id="addFormJsX" placeholder="Secondary JS Code">Optional</textarea>
                 </div>
                 </div>
                 <div class="flex flex-col">

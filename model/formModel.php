@@ -33,5 +33,20 @@ function getDetailsForRadioButtons(PDO $db) : array|bool {
     $results = $query->fetchAll();
     $query->closeCursor();
     return $results;
+}
 
+function addNewForm (PDO $db,
+                     string $class,
+                     string $title,
+                     string $desc,
+                     string $rw,
+                     string $rwCss,
+                     string $bs,
+                     string $tw,
+                     string $js,
+                     string $jsX,
+                     string $php,
+                     string $phpX) : bool
+{
+    die(var_dump($class, $title, $desc, $rw, $rwCss, $bs, $tw, $js, $jsX, $php, $phpX));
 }

@@ -12,8 +12,17 @@ function getAllFormsByMode(PDO $db, string $form, string $mode) : array|bool {
             $mode = 'snip_forms_tw';
             break;
     }
-    $sql = "SELECT snip_forms_title AS title,
-                   snip_forms_desc AS descp, 
+    $sql = "SELECT snip_forms_class AS class,
+                   snip_forms_title AS title,
+                   snip_forms_desc AS descp,
+                   snip_forms_rw AS rw,
+                   snip_forms_rw_css AS css,
+                   snip_forms_bs AS bs,
+                   snip_forms_tw AS tw,
+                   snip_forms_js_main AS js,
+                   snip_forms_js_extra AS jsX,
+                   snip_forms_php_function AS phpFunc,
+                   snip_forms_php_call AS phpCall,
                    :mode AS code 
             FROM snippets_forms 
             WHERE snip_forms_class = :form";

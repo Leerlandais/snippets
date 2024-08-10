@@ -9,16 +9,20 @@
                 <div class="flex flex-col place-content-evenly">
                 <div>
                     <?php
-                    $i = true;
+                    if(is_array($addForm)){
+                    $i = false;
                     foreach ($addForm as $value) {
                         ?>
                         <label for="addFormClass<?=$value["class"]?>" class="ml-4"><?=ucfirst($value["class"])?></label>
-                        <input class="ps-2 me-1" type="radio" id="addFormClass<?=$value["class"]?>" name="addFormClass" value="<?=$value["class"]?>" <?= $i ? 'required' : '' ?>>
+                        <input class="ps-2 me-1 addFormClass" type="radio" id="addFormClass<?=$value["class"]?>" name="addFormClass" value="<?=$value["class"]?>" <?= $i ? 'required' : '' ?>>
                         <?php
                         $i = false;
                     }
+                    }
                     ?>
                 </div>
+                    <label class="text-gray-600 font-bold inline-block pb-2" for="addFormClassNew">Add Class</label>
+                    <input class="border border-gray-400 focus:outline-slate-400 rounded-md w-full shadow-sm px-5 py-2" type="text" name="addFormClass" id="addFormClassNew" placeholder="Add New Class" required>
                 <div>
                     <label class="text-gray-600 font-bold inline-block pb-2" for="addFormTitle">Title</label>
                     <input class="border border-gray-400 focus:outline-slate-400 rounded-md w-full shadow-sm px-5 py-2" type="text" name="addFormTitle" id="addFormTitle" placeholder="Title" required>

@@ -1,5 +1,5 @@
 <?php
-var_dump($addForm);
+// var_dump($addForm);
 ?>
 <form action="./" method="POST">
     <div class="bg-[#F9FAFB] h-auto w-auto flex items-center">
@@ -68,10 +68,16 @@ var_dump($addForm);
                     <textarea class="border border-gray-400 focus:outline-slate-400 rounded-md w-full shadow-sm px-5 py-2" name="addFormPhpX" id="addFormPhpX" placeholder="PHP Call" required></textarea>
                 </div>
                 </div>
-            </div>
+                <div class="flex flex-col place-content-evenly">
+                <div>
+                    <label class="text-gray-600 font-bold inline-block pb-2" for="addFormImage">Image</label>
+                    <input class="border border-gray-400 focus:outline-slate-400 rounded-md w-full shadow-sm px-5 py-2" type="text" name="addFormImage" id="addFormImage" placeholder="Image Location" required>
+                </div>
                 <div>
                     <button class="bg-[#4F46E5] w-full py-2 px-6 mt-2 rounded-md text-white font-bold cursor-pointer hover:bg-[#181196]" type="submit">Add</button>
                 </div>
+            </div>
+            </div>
         </div>
     </div>
 </form>

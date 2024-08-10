@@ -25,7 +25,8 @@ if(isset($_POST["addFormClass"],
          $_POST["addFormJs"],
          $_POST["addFormJsX"],
          $_POST["addFormPhp"],
-         $_POST["addFormPhpX"]
+         $_POST["addFormPhpX"],
+         $_POST["addFormImage"],
         )) {
     $class = standardClean($_POST["addFormClass"]);
     $title = standardClean($_POST["addFormTitle"]);
@@ -38,8 +39,9 @@ if(isset($_POST["addFormClass"],
     $jsX = simpleTrim($_POST["addFormJsX"]);
     $php = simpleTrim($_POST["addFormPhp"]);
     $phpX = simpleTrim($_POST["addFormPhpX"]);
+    $img = standardClean($_POST["addFormImage"]);
 
-    $add = addNewForm($db, $class, $title, $desc, $rw, $rwCss, $bs, $tw, $js, $jsX, $php, $phpX);
+    $add = addNewForm($db, $class, $title, $desc, $rw, $rwCss, $bs, $tw, $js, $jsX, $php, $phpX, $img);
 }
 
 

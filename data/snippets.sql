@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3307
--- Generation Time: Aug 10, 2024 at 08:33 PM
+-- Generation Time: Aug 10, 2024 at 08:58 PM
 -- Server version: 11.2.2-MariaDB
 -- PHP Version: 8.2.13
 
@@ -20,32 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `snippets`
 --
-
--- --------------------------------------------------------
-
---
--- Table structure for table `snippets_forms`
---
-
-DROP TABLE IF EXISTS `snippets_forms`;
-CREATE TABLE IF NOT EXISTS `snippets_forms` (
-  `snip_forms_id` smallint(5) UNSIGNED NOT NULL AUTO_INCREMENT,
-  `snip_forms_class` varchar(31) NOT NULL,
-  `snip_forms_title` varchar(63) NOT NULL,
-  `snip_forms_desc` varchar(255) NOT NULL,
-  `snip_forms_rw` text NOT NULL,
-  `snip_forms_rw_css` text NOT NULL,
-  `snip_forms_bs` text NOT NULL,
-  `snip_forms_tw` text NOT NULL,
-  `snip_forms_js_main` text DEFAULT NULL,
-  `snip_forms_js_extra` text DEFAULT NULL,
-  `snip_forms_php_function` text DEFAULT NULL,
-  `snip_forms_php_call` text DEFAULT NULL,
-  `snip_forms_img_rw` varchar(255) DEFAULT NULL,
-  `snip_forms_img_bs` varchar(255) DEFAULT NULL,
-  `snip_forms_img_tw` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`snip_forms_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -75,6 +49,21 @@ CREATE TABLE IF NOT EXISTS `snippets_forms_general` (
   `snip_forms_title` varchar(256) NOT NULL,
   `snip_forms_desc` varchar(512) NOT NULL,
   PRIMARY KEY (`snip_forms_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `snippets_forms_images`
+--
+
+DROP TABLE IF EXISTS `snippets_forms_images`;
+CREATE TABLE IF NOT EXISTS `snippets_forms_images` (
+  `snip_image_id` smallint(5) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `snip_image_rw` varchar(128) DEFAULT NULL,
+  `snip_image_bs` varchar(128) DEFAULT NULL,
+  `snip_image_tw` varchar(128) DEFAULT NULL,
+  PRIMARY KEY (`snip_image_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -155,21 +144,6 @@ CREATE TABLE IF NOT EXISTS `snippets_form_has_php` (
   `snip_form_id` smallint(5) UNSIGNED NOT NULL,
   `snip_php_id` smallint(5) UNSIGNED NOT NULL,
   PRIMARY KEY (`snip_form_id`,`snip_php_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `snippets_images`
---
-
-DROP TABLE IF EXISTS `snippets_images`;
-CREATE TABLE IF NOT EXISTS `snippets_images` (
-  `snip_image_id` smallint(5) UNSIGNED NOT NULL AUTO_INCREMENT,
-  `snip_image_rw` varchar(128) DEFAULT NULL,
-  `snip_image_bs` varchar(128) DEFAULT NULL,
-  `snip_image_tw` varchar(128) DEFAULT NULL,
-  PRIMARY KEY (`snip_image_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -189,6 +163,34 @@ CREATE TABLE IF NOT EXISTS `snippets_users` (
   `snip_user_permissions` tinyint(3) UNSIGNED NOT NULL DEFAULT 1,
   PRIMARY KEY (`snip_user_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `snippets_form_has_code`
+--
+ALTER TABLE `snippets_form_has_code`
+  ADD CONSTRAINT `delCodeRel` FOREIGN KEY (`snip_form_id`) REFERENCES `snippets_forms_general` (`snip_forms_id`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `snippets_form_has_image`
+--
+ALTER TABLE `snippets_form_has_image`
+  ADD CONSTRAINT `delImgRel` FOREIGN KEY (`snip_form_id`) REFERENCES `snippets_forms_general` (`snip_forms_id`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `snippets_form_has_js`
+--
+ALTER TABLE `snippets_form_has_js`
+  ADD CONSTRAINT `delJsRel` FOREIGN KEY (`snip_form_id`) REFERENCES `snippets_forms_general` (`snip_forms_id`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `snippets_form_has_php`
+--
+ALTER TABLE `snippets_form_has_php`
+  ADD CONSTRAINT `delPhpRel` FOREIGN KEY (`snip_form_id`) REFERENCES `snippets_forms_general` (`snip_forms_id`) ON DELETE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

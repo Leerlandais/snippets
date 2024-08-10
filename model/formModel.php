@@ -47,7 +47,9 @@ function addNewForm (PDO $db,
                      string $jsX,
                      string $php,
                      string $phpX,
-                     string $img) : bool
+                     string $imgRw,
+                     string $imgBs,
+                     string $imgTw) : bool
 {
     $sql = "INSERT INTO `snippets_forms`
                         (`snip_forms_class`, 
@@ -61,8 +63,10 @@ function addNewForm (PDO $db,
                          `snip_forms_js_extra`, 
                          `snip_forms_php_function`, 
                          `snip_forms_php_call`,
-                         `snip_forms_img_loc`) 
-            VALUES (?,?,?,?,?,?,?,?,?,?,?,?)";
+                         `snip_forms_img_rw`,
+                         `snip_forms_img_bs`,
+                         `snip_forms_img_tw`) 
+            VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
     $stmt = $db->prepare($sql);
     $stmt->bindValue(1, $class);
     $stmt->bindValue(2, $title);
@@ -75,7 +79,9 @@ function addNewForm (PDO $db,
     $stmt->bindValue(9, $jsX);
     $stmt->bindValue(10, $php);
     $stmt->bindValue(11, $phpX);
-    $stmt->bindValue(12, $img);
+    $stmt->bindValue(12, $imgRw);
+    $stmt->bindValue(13, $imgBs);
+    $stmt->bindValue(14, $imgTw);
     $stmt->execute();
     if ($stmt->rowCount() === 0) return false;
     return true;

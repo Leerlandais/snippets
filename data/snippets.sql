@@ -3,7 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3307
--- Generation Time: Aug 10, 2024 at 03:34 PM
+
+-- Generation Time: Aug 10, 2024 at 08:58 PM
+
 -- Server version: 11.2.2-MariaDB
 -- PHP Version: 8.2.13
 
@@ -24,27 +26,128 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `snippets_forms`
+-- Table structure for table `snippets_forms_code`
 --
 
-DROP TABLE IF EXISTS `snippets_forms`;
-CREATE TABLE IF NOT EXISTS `snippets_forms` (
+DROP TABLE IF EXISTS `snippets_forms_code`;
+CREATE TABLE IF NOT EXISTS `snippets_forms_code` (
+  `snip_code_id` smallint(5) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `snip_code_rw` text DEFAULT NULL,
+  `snip_code_bs` text DEFAULT NULL,
+  `snip_code_tw` text DEFAULT NULL,
+  PRIMARY KEY (`snip_code_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `snippets_forms_general`
+--
+
+DROP TABLE IF EXISTS `snippets_forms_general`;
+CREATE TABLE IF NOT EXISTS `snippets_forms_general` (
   `snip_forms_id` smallint(5) UNSIGNED NOT NULL AUTO_INCREMENT,
-  `snip_forms_class` varchar(31) NOT NULL,
-  `snip_forms_title` varchar(63) NOT NULL,
-  `snip_forms_desc` varchar(255) NOT NULL,
-  `snip_forms_rw` text NOT NULL,
-  `snip_forms_rw_css` text NOT NULL,
-  `snip_forms_bs` text NOT NULL,
-  `snip_forms_tw` text NOT NULL,
-  `snip_forms_js_main` text DEFAULT NULL,
-  `snip_forms_js_extra` text DEFAULT NULL,
-  `snip_forms_php_function` text DEFAULT NULL,
-  `snip_forms_php_call` text DEFAULT NULL,
-  `snip_forms_img_rw` varchar(255) DEFAULT NULL,
-  `snip_forms_img_bs` varchar(255) DEFAULT NULL,
-  `snip_forms_img_tw` varchar(255) DEFAULT NULL,
+
+  `snip_forms_class` varchar(32) NOT NULL,
+  `snip_forms_title` varchar(256) NOT NULL,
+  `snip_forms_desc` varchar(512) NOT NULL,
+
   PRIMARY KEY (`snip_forms_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `snippets_forms_images`
+--
+
+DROP TABLE IF EXISTS `snippets_forms_images`;
+CREATE TABLE IF NOT EXISTS `snippets_forms_images` (
+  `snip_image_id` smallint(5) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `snip_image_rw` varchar(128) DEFAULT NULL,
+  `snip_image_bs` varchar(128) DEFAULT NULL,
+  `snip_image_tw` varchar(128) DEFAULT NULL,
+  PRIMARY KEY (`snip_image_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `snippets_forms_js`
+--
+
+DROP TABLE IF EXISTS `snippets_forms_js`;
+CREATE TABLE IF NOT EXISTS `snippets_forms_js` (
+  `snip_js_id` smallint(5) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `snip_js_main` text DEFAULT NULL,
+  `snip_js_opt` text DEFAULT NULL,
+  PRIMARY KEY (`snip_js_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `snippets_forms_php`
+--
+
+DROP TABLE IF EXISTS `snippets_forms_php`;
+CREATE TABLE IF NOT EXISTS `snippets_forms_php` (
+  `snip_php_id` smallint(5) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `snip_php_call` text NOT NULL,
+  `snip_php_func` text NOT NULL,
+  PRIMARY KEY (`snip_php_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `snippets_form_has_code`
+--
+
+DROP TABLE IF EXISTS `snippets_form_has_code`;
+CREATE TABLE IF NOT EXISTS `snippets_form_has_code` (
+  `snip_form_id` smallint(5) UNSIGNED NOT NULL,
+  `snip_code_id` smallint(5) UNSIGNED NOT NULL,
+  PRIMARY KEY (`snip_form_id`,`snip_code_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `snippets_form_has_image`
+--
+
+DROP TABLE IF EXISTS `snippets_form_has_image`;
+CREATE TABLE IF NOT EXISTS `snippets_form_has_image` (
+  `snip_form_id` smallint(5) UNSIGNED NOT NULL,
+  `snip_image_id` smallint(5) UNSIGNED NOT NULL,
+  PRIMARY KEY (`snip_form_id`,`snip_image_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `snippets_form_has_js`
+--
+
+DROP TABLE IF EXISTS `snippets_form_has_js`;
+CREATE TABLE IF NOT EXISTS `snippets_form_has_js` (
+  `snip_form_id` smallint(5) UNSIGNED NOT NULL,
+  `snip_js_id` smallint(5) UNSIGNED NOT NULL,
+  PRIMARY KEY (`snip_form_id`,`snip_js_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `snippets_form_has_php`
+--
+
+DROP TABLE IF EXISTS `snippets_form_has_php`;
+CREATE TABLE IF NOT EXISTS `snippets_form_has_php` (
+  `snip_form_id` smallint(5) UNSIGNED NOT NULL,
+  `snip_php_id` smallint(5) UNSIGNED NOT NULL,
+  PRIMARY KEY (`snip_form_id`,`snip_php_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -64,6 +167,34 @@ CREATE TABLE IF NOT EXISTS `snippets_users` (
   `snip_user_permissions` tinyint(3) UNSIGNED NOT NULL DEFAULT 1,
   PRIMARY KEY (`snip_user_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `snippets_form_has_code`
+--
+ALTER TABLE `snippets_form_has_code`
+  ADD CONSTRAINT `delCodeRel` FOREIGN KEY (`snip_form_id`) REFERENCES `snippets_forms_general` (`snip_forms_id`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `snippets_form_has_image`
+--
+ALTER TABLE `snippets_form_has_image`
+  ADD CONSTRAINT `delImgRel` FOREIGN KEY (`snip_form_id`) REFERENCES `snippets_forms_general` (`snip_forms_id`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `snippets_form_has_js`
+--
+ALTER TABLE `snippets_form_has_js`
+  ADD CONSTRAINT `delJsRel` FOREIGN KEY (`snip_form_id`) REFERENCES `snippets_forms_general` (`snip_forms_id`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `snippets_form_has_php`
+--
+ALTER TABLE `snippets_form_has_php`
+  ADD CONSTRAINT `delPhpRel` FOREIGN KEY (`snip_form_id`) REFERENCES `snippets_forms_general` (`snip_forms_id`) ON DELETE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

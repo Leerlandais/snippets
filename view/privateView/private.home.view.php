@@ -19,7 +19,8 @@
     <?php include "inc/privateSideBar.php"; ?>
     <main class="flex-1 p-6">
         <?php if (isset($systemMessage)) echo '<h2 class="text-4xl text-red-700 text-center">'.$systemMessage.'</h2>'; ?>
-        <?php if (isset($addForm)) include "inc/privateAddForm.php"; ?>
+        <?php if (isset($buttonsForAddForm)) include 'inc/addForm.php'?>
+        <?php if (isset($existingForms)) include 'inc/addCode.php' ; ?>
     </main>
 </div>
 

@@ -6,7 +6,7 @@
                 <div class="flex items-center justify-between p-2 hover:bg-gray-700">
                     <div class="flex items-center">
                         <i class="fas fa-file-alt mr-2"></i>
-                        <span>Raw</span>
+                        <span>Tailwind</span>
                     </div>
                     <i class="fas fa-chevron-down text-xs"></i>
                 </div>
@@ -21,21 +21,25 @@
                         </div>
                         <ul class="dropdown-inner ml-4 hidden">
                             <li>
-                                <a href="?update=login&mode=rw" class="block p-2 hover:bg-gray-700 flex items-center">
+                                <a href="?update=login&mode=tw" class="block p-2 hover:bg-gray-700 flex items-center">
                                     Login
                                 </a>
                             </li>
                             <li>
-                                <a href="?update=create&mode=rw" class="block p-2 hover:bg-gray-700 flex items-center">
+                                <a href="?update=create&mode=tw" class="block p-2 hover:bg-gray-700 flex items-center">
                                     Create User
                                 </a>
                             </li>
                             <li>
-                                <a href="?update=reset&mode=rw" class="block p-2 hover:bg-gray-700 flex items-center">
+                                <a href="?update=reset&mode=tw" class="block p-2 hover:bg-gray-700 flex items-center">
                                     Reset Password
                                 </a>
                             </li>
-
+                            <li>
+                                <a href="?update=addForm&mode=tw" class="block p-2 hover:bg-gray-700 flex items-center">
+                                    Add New Form
+                                </a>
+                            </li>
                         </ul>
                     </li>
                     <li class="option-with-dropdown-inner">
@@ -60,6 +64,7 @@
                     </li>
                 </ul>
             </li>
+
             <li class="option-with-dropdown">
                 <div class="flex items-center justify-between p-2 hover:bg-gray-700">
                     <div class="flex items-center">
@@ -93,6 +98,11 @@
                                     Reset Password
                                 </a>
                             </li>
+                            <li>
+                                <a href="?update=addForm&mode=bs" class="block p-2 hover:bg-gray-700 flex items-center">
+                                    Add New Form
+                                </a>
+                            </li>
                         </ul>
                     </li>
                     <li class="option-with-dropdown-inner">
@@ -121,7 +131,7 @@
                 <div class="flex items-center justify-between p-2 hover:bg-gray-700">
                     <div class="flex items-center">
                         <i class="fas fa-file-alt mr-2"></i>
-                        <span>Tailwind</span>
+                        <span>Raw</span>
                     </div>
                     <i class="fas fa-chevron-down text-xs"></i>
                 </div>
@@ -136,18 +146,23 @@
                         </div>
                         <ul class="dropdown-inner ml-4 hidden">
                             <li>
-                                <a href="?update=login&mode=tw" class="block p-2 hover:bg-gray-700 flex items-center">
+                                <a href="?update=login&mode=rw" class="block p-2 hover:bg-gray-700 flex items-center">
                                     Login
                                 </a>
                             </li>
                             <li>
-                                <a href="?update=create&mode=tw" class="block p-2 hover:bg-gray-700 flex items-center">
+                                <a href="?update=create&mode=rw" class="block p-2 hover:bg-gray-700 flex items-center">
                                     Create User
                                 </a>
                             </li>
                             <li>
-                                <a href="?update=reset&mode=tw" class="block p-2 hover:bg-gray-700 flex items-center">
+                                <a href="?update=reset&mode=rw" class="block p-2 hover:bg-gray-700 flex items-center">
                                     Reset Password
+                                </a>
+                            </li>
+                            <li>
+                                <a href="?update=addForm&mode=rw" class="block p-2 hover:bg-gray-700 flex items-center">
+                                    Add New Form
                                 </a>
                             </li>
                         </ul>
@@ -174,10 +189,13 @@
                     </li>
                 </ul>
             </li>
+
             <li>
-                <a href="?update=addForm" class="block p-2 hover:bg-gray-700 flex items-center">
-                    Add New Form
-                </a>
+                    <div class="flex items-center">
+                        <i class="fas fa-file-alt mr-2"></i>
+                        <a href="?update=addNewCode"><span>New Php/JS</span></a>
+                    </div>
+
             </li>
             <!-- Add more links for the side navigation -->
         </ul>

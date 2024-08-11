@@ -37,7 +37,7 @@
                 <div>
                     <label class="text-gray-600 font-bold inline-block pb-2" for="addFormCode">Code</label>
                     <textarea class="border border-gray-400 focus:outline-slate-400 rounded-md w-full shadow-sm px-5 py-2" name="addFormCode" id="addFormCode" placeholder="Code" required></textarea>
-                    <input type="text" name="addFormMode" id="addFormMode" value="<?=$_GET["mode"]?>">
+                    <input type="text" name="addFormMode" id="addFormMode" value="<?=$_GET["mode"]?>" class="hidden">
                 </div>
                 </div>
         <!--        <div class="flex flex-col"></div>       -->

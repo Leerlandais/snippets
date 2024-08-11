@@ -3,7 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3307
+
 -- Generation Time: Aug 10, 2024 at 08:58 PM
+
 -- Server version: 11.2.2-MariaDB
 -- PHP Version: 8.2.13
 
@@ -45,9 +47,11 @@ CREATE TABLE IF NOT EXISTS `snippets_forms_code` (
 DROP TABLE IF EXISTS `snippets_forms_general`;
 CREATE TABLE IF NOT EXISTS `snippets_forms_general` (
   `snip_forms_id` smallint(5) UNSIGNED NOT NULL AUTO_INCREMENT,
+
   `snip_forms_class` varchar(32) NOT NULL,
   `snip_forms_title` varchar(256) NOT NULL,
   `snip_forms_desc` varchar(512) NOT NULL,
+
   PRIMARY KEY (`snip_forms_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 

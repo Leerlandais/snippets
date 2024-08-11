@@ -3,8 +3,8 @@ if (isset($_GET["logout"])) require_once '../model/logoutModel.php';
 
 if(isset($_GET["update"])) {
     switch ($_GET["update"]) {
-        case 'addNew':
-            echo "New Shit";
+        case 'addNewCode':
+            $existingForms = getAllFormsForCode($db);
             break;
         case "addForm" :
             $buttonsForAddForm = getDetailsForRadioButtons($db);

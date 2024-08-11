@@ -141,3 +141,15 @@ function addNewForm(PDO $db, string $class, string $title, string $desc, string 
 
 
 }
+
+
+function getAllFormsForCode(PDO $db) : array|bool {
+    $sql = "SELECT snip_forms_id AS id, snip_forms_title AS title
+            FROM snippets_forms
+            ORDER BY snip_forms_id ASC";
+    $query = $db->query($sql);
+    if ($query->rowCount() === 0) return false;
+    $results = $query->fetchAll();
+    $query->closeCursor();
+    return $results;
+}

@@ -193,7 +193,7 @@
             <li>
                     <div class="flex items-center">
                         <i class="fas fa-file-alt mr-2"></i>
-                        <a href="?update=addNew"><span>New</span></a>
+                        <a href="?update=addNewCode"><span>New Php/JS</span></a>
                     </div>
 
             </li>

@@ -11,7 +11,7 @@ if(isset($_GET["update"])) {
             break;
     }
 }
-
+// ADD NEW FORM
 if (isset(
         $_POST["addFormClass"],
         $_POST["addFormTitle"],
@@ -30,6 +30,17 @@ if (isset(
 
     $addNewForm = addNewForm($db, $class, $title, $desc, $image, $code, $mode);
 }
+
+// ADD NEW PHP FUNCTION
+if(isset($_POST["addCodePhpFunc"], $_POST["addCodePhpCall"])) {
+    $code = simpleTrim($_POST["addCodePhpFunc"]);
+    $call = simpleTrim($_POST["addCodePhpCall"]);
+    $target = intClean($_POST["addCodePhpTarget"]);
+
+    $addCodePhp = addPhpFunctionCode($db, $code, $call, $target);
+}
+
+
 
 $title = "Private Page";
 include "../view/privateView/private.home.view.php";

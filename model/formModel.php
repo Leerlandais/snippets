@@ -27,7 +27,7 @@ function getAllFormsByMode(PDO $db, string $form, string $mode) : array|bool {
 
 function getDetailsForRadioButtons(PDO $db) : array|bool {
     $sql = "SELECT DISTINCT snip_forms_class AS class
-            FROM snippets_forms";
+            FROM snippets_forms_general";
     $query = $db->query($sql);
     if ($query->rowCount() === 0) return false;
     $results = $query->fetchAll();
@@ -130,26 +130,69 @@ function addNewForm(PDO $db, string $class, string $title, string $desc, string 
     $stmt->bindParam(2, $newCodeId);
     $stmt->execute();
 
+    $db->commit();
     return true;
 
-    $db->commit();
 
     }catch(Exception $e) {
         $db->rollBack();
+        die($e->getMessage());
         return false;
     }
 
 
 }
 
-
 function getAllFormsForCode(PDO $db) : array|bool {
     $sql = "SELECT snip_forms_id AS id, snip_forms_title AS title
-            FROM snippets_forms
+            FROM snippets_forms_general
             ORDER BY snip_forms_id ASC";
     $query = $db->query($sql);
     if ($query->rowCount() === 0) return false;
     $results = $query->fetchAll();
     $query->closeCursor();
     return $results;
+}
+
+function addPhpFunctionCode(PDO $db, string $code, string $call, int $target) : bool {
+
+    try {
+        // as I'm using multiple sql requests, I've wrapped it in a transaction to allow rollbacks if needed
+        $db->beginTransaction();
+
+        $sql = "INSERT INTO snippets_forms_php
+                        (snip_php_func, snip_php_call)
+            VALUES (?,?)";
+        $stmt = $db->prepare($sql);
+        $stmt->bindParam(1, $code);
+        $stmt->bindParam(2, $call);
+        $stmt->execute();
+
+        $sqlId = "SELECT snip_php_id
+              FROM snippets_forms_php
+              ORDER BY snip_php_id DESC
+              LIMIT 1";
+        $stmtId = $db->query($sqlId);
+        $result = $stmtId->fetch();
+        $stmtId->closeCursor();
+        $newId = $result["snip_php_id"];
+
+
+        $sql = "INSERT INTO snippets_form_has_php
+                        (snip_form_id, snip_php_id)
+            VALUES (?,?)";
+        $stmt = $db->prepare($sql);
+        $stmt->bindParam(1, $target);
+        $stmt->bindParam(2, $newId);
+        $stmt->execute();
+
+        $db->commit();
+        return true;
+
+    }catch (Exception $e) {
+        $db->rollBack();
+        die($e->getMessage());
+        return false;
+    }
+
 }

@@ -18,9 +18,12 @@
     <?php include "inc/publicHeader.php"; ?>
 <div class="flex">
     <?php include "inc/publicSideBar.php"; ?>
+
+
         <main class="flex-1 p-6">
             <?php if (isset($systemMessage)) echo '<h2 class="text-4xl text-red-700 text-center">'.$systemMessage.'</h2>'; ?>
             <?php if(isset($_GET["login"])) include "inc/loginForm.php"; ?>
+            <?php if(isset($getForms) && is_array($getForms)) include "inc/publicShowForms.php" ?>
         </main>
 </div>
 

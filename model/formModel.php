@@ -4,22 +4,31 @@ function getAllFormsByMode(PDO $db, string $form, string $mode) : array|bool {
     switch ($mode) {
         case 'rw':
             $mode = 'snip_forms_rw';
+            $image = 'snip_image_rw';
             break;
         case 'bs':
             $mode = 'snip_forms_bs';
+            $image = 'snip_image_bs';
             break;
         case 'tw':
             $mode = 'snip_forms_tw';
+            $image = 'snip_image_tw';
             break;
     }
-    $sql = "SELECT snip_forms_title AS title,
-                   snip_forms_desc AS descp, 
+    $sql = "SELECT f.snip_forms_title AS title,
+                   f.snip_forms_desc AS descp, 
+                   i.$image AS img,
                    :mode AS code 
-            FROM snippets_forms 
+            FROM snippets_forms_general f
+            LEFT JOIN snippets_form_has_image fhi
+            ON fhi.snip_form_id = f.snip_forms_id
+            LEFT JOIN snippets_forms_images i 
+            ON i.snip_image_id = fhi.snip_image_id
             WHERE snip_forms_class = :form";
     $stmt = $db->prepare($sql);
     $stmt->bindParam(':form', $form);
     $stmt->bindParam(':mode', $mode);
+
         $stmt->execute();
         if ($stmt->rowCount() === 0) return false;
     return $stmt->fetchAll();

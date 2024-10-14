@@ -1,5 +1,5 @@
 <?php
-
+var_dump($buttonsForAddForm);
 ?>
 <form action="./" method="POST" id="addNewForm">
     <div class="bg-[#F9FAFB] h-auto w-auto flex items-center">
